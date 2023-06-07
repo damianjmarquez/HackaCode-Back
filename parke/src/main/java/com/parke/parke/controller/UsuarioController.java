@@ -43,8 +43,8 @@ public class UsuarioController {
     @PutMapping ("/personas/editar/{id_original}")
     public Usuario editPersona (@PathVariable Long id_original,
             @RequestParam(required = false, name = "id") Long nuevaId,
-            @RequestParam(required = false, name = "nombre") String nuevoUsuario,
-            @RequestParam(required = false, name = "apellido") String nuevoContraseña) {
+            @RequestParam(required = false, name = "usuario") String nuevoUsuario,
+            @RequestParam(required = false, name = "contraseña") String nuevoContraseña) {
             
         persoServ.editPersona(id_original, nuevaId, nuevoUsuario, nuevoContraseña);
         

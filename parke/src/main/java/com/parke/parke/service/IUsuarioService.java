@@ -23,7 +23,8 @@ public interface IUsuarioService {
     //edición/modificación
     public void editPersona(Long idOriginal, Long idNueva,
                             String nuevoUsuario,
-                            String nnuevoContraseña);
+                            String nnuevoContraseña
+                            );
 
 	void editPersona(Usuario per);
     

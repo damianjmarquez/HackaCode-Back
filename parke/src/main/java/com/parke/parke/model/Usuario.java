@@ -1,86 +1,45 @@
 package com.parke.parke.model;
 
-import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
 
 @Entity
 public class Usuario {
     
     @Id
-    
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private Long id;
     private String usuario;
     private String contraseña;
    
     
-    //tabla una en una 
     
-    
-    
-
-    
-
-	
-
-
-
-	
-
-
-
-
-
-
-
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getNombre() {
+	public String getUsuario() {
 		return usuario;
 	}
-
-	public void setNombre(String nombre) {
-		this.usuario = nombre;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
-
-	public String getApellido() {
+	public String getContraseña() {
 		return contraseña;
 	}
-
-	public void setApellido(String apellido) {
-		this.contraseña = apellido;
+	public void setContraseña(String contraseña) {
+		this.contraseña = contraseña;
 	}
-
 	
-
-
-
-	
-
-
-
-
-
-
-
-	
-
-
-
-	
-	
+   
 	
     
-    
-    
+    //tabla una en una 
+   
 }

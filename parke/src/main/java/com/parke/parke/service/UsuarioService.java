@@ -48,8 +48,8 @@ public class UsuarioService implements IUsuarioService{
             
             //proceso de modificación a nivel lógico
             perso.setId(idNueva);
-            perso.setNombre(nuevoUsuario);
-            perso.setApellido(nuevocontraseña);
+            perso.setUsuario(nuevoUsuario);
+            perso.setContraseña(nuevocontraseña);
             
             
             //guardar los cambios
@@ -62,6 +62,5 @@ public class UsuarioService implements IUsuarioService{
 		// TODO Auto-generated method stub
 		
 	}
-  
     
 }
