@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Listado de Usuarios </title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+	crossorigin="anonymous">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-md">
+			<a th:href="@{/estudiantes/index}" class="btn btn-primary btn-sm mb3">Inicio </a>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<h1>LISTA DE USUARIOS</h1>
+		</div>
+		<a th:href="@{/empleados/nuevo}" class="btn btn-primary btn-sm mb3">Agragar Usuario </a>
+		<br><br>
+		<table class="table table-striped table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th>usuario</th>
+					<th>password</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="empleado : ${empleados}">
+					<td th:text="${empleado.usuario}">usuario</td>
+					<td th:text="${empleado.password}">password</td>
+					<td>
+						<a th:href="@{/empleados/editar/{id}(id=${empleado.id})}" class="btn btn-info">Editar</a>
+						<a th:href="@{/empleados/{id}(id=${empleado.id})}" class="btn btn-danger">Eliminar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
