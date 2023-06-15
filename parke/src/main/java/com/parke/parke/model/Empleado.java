@@ -15,7 +15,8 @@ public class Empleado {
 	private int id;
     private String nombre;
     private String apellido;
-    private String fechaNac;
+    private String dni;
+	private String fechaNac;
     private String direccion;
     private String mail;
     private String estadoCivil;
@@ -47,6 +48,14 @@ public class Empleado {
 
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
+	}
+	
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
 	}
 
 	public String getFechaNac() {
