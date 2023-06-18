@@ -32,14 +32,14 @@ public class EmpleadoController {
 	        
 	        return empleadoServ.getEmpleado();
 	    }
-	    
+	    @CrossOrigin(origins = "*")
 	    @PostMapping ("/empleados/crear")
 	    public String saveComprador (@RequestBody Empleado empleado) {
 	    	empleadoServ.saveEmpleado(empleado);
 	        
 	        return "El empleado fue creada correctamente";
 	    }
-	    
+	    @CrossOrigin(origins = "*")
 	    @DeleteMapping ("/empleados/borrar/{id}")
 	    public String deleteEmpleado(@PathVariable int id) {
 	    	empleadoServ.deleteEmpleado(id);
@@ -48,24 +48,24 @@ public class EmpleadoController {
 	    
 	    
 	    
-	    
+	    @CrossOrigin(origins = "*")
 	    @PutMapping ("/empleados/editar/{id_original}")
 	    public Empleado editEmpleado (@PathVariable int id_original,
 	            @RequestParam(required = false, name = "id") int nuevaId,
 	            @RequestParam(required = false, name = "nombre") String nuevoNombre,
 	            @RequestParam(required = false, name = "apellido") String nuevoApellido,
 	            @RequestParam(required = false, name = "dni") String nuevoDni,
-	            @RequestParam(required = false, name = "fechaNac") String nuevoFechNac,
+	            @RequestParam(required = false, name = "nacimiento") String nuevoFechNac,
 	            @RequestParam(required = false, name = "direccion") String nuevaDireccion,
 	            @RequestParam(required = false, name = "mail") String nuevoEmail,
 	            @RequestParam(required = false, name = "estadoCivil") String nuevoEstadoCivil,
-	            @RequestParam(required = false, name = "telefono") String nuevoTelefono
-	            
+	            @RequestParam(required = false, name = "telefono") String nuevoTelefono,
+	            @RequestParam(required = false, name = "juego") String nuevoJuego
 	            ) {
 	            
 	    	EmpleadoService empleadoService = new EmpleadoService();
 			empleadoService.editEmpleado(id_original, nuevaId, nuevoNombre, nuevoApellido, nuevoDni, nuevoFechNac, nuevaDireccion, nuevoEmail,
-					nuevoEstadoCivil, nuevoTelefono);
+					nuevoEstadoCivil, nuevoTelefono,nuevoJuego);
 	        
 	        Empleado empleado = empleadoServ.findEmpleado(nuevaId);
 	        
@@ -74,7 +74,7 @@ public class EmpleadoController {
 	    }
 	    
 	   
-	    
+	    @CrossOrigin(origins = "*")
 	    @PutMapping ("/empleados/editar")
 	    public Empleado editEmpleado(@RequestBody Empleado empleado) {
 	    	empleadoServ.editEmpleado(empleado);

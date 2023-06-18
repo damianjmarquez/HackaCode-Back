@@ -41,12 +41,12 @@ public class UsuarioController {
         persoServ.deletePersona(id);
         return "La persona fue eliminada correctamente";
     }
-    @CrossOrigin(origins = "http://127.0.0.1:5500") 
+    @CrossOrigin(origins = "*") 
     @PutMapping ("/personas/editar/{id_original}")
     public Usuario editPersona (@PathVariable Long id_original,
             @RequestParam(required = false, name = "id") Long nuevaId,
             @RequestParam(required = false, name = "usuario") String nuevoUsuario,
-            @RequestParam(required = false, name = "clave") String nuevoContraseña) {
+            @RequestParam(required = false, name = "contraseña") String nuevoContraseña) {
             
         persoServ.editPersona(id_original, nuevaId, nuevoUsuario, nuevoContraseña);
         
@@ -55,7 +55,7 @@ public class UsuarioController {
         return perso;
 
     }
-    @CrossOrigin(origins = "http://127.0.0.1:5500")   
+    @CrossOrigin(origins = "*")   
     @PutMapping ("/personas/editar")
     public Usuario editPersona(@RequestBody Usuario per) {
     	persoServ.editPersona(per);

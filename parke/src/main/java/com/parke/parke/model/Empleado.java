@@ -16,11 +16,12 @@ public class Empleado {
     private String nombre;
     private String apellido;
     private String dni;
-	private String fechaNac;
+	private String nacimiento;
     private String direccion;
     private String mail;
     private String estadoCivil;
     private String telefono;
+    private String juego;
     
 	public Empleado() {
 		super();
@@ -58,12 +59,12 @@ public class Empleado {
 		this.dni = dni;
 	}
 
-	public String getFechaNac() {
-		return fechaNac;
+	public String getNacimiento() {
+		return nacimiento;
 	}
 
-	public void setFechaNac(String fechaNac) {
-		this.fechaNac = fechaNac;
+	public void setNacimiento(String nacimiento) {
+		this.nacimiento = nacimiento;
 	}
 
 	public String getDireccion() {
@@ -97,6 +98,16 @@ public class Empleado {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+
+	public String getJuego() {
+		return juego;
+	}
+
+	public void setJuego(String juego) {
+		this.juego = juego;
+	}
+	
+	
 	
 	
     

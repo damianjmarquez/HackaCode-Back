@@ -38,10 +38,10 @@ public class Comprador {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public String getFechaNac() {
+	public String getNacimiento() {
 		return nacimiento;
 	}
-	public void setFechaNac(String nacimiento) {
+	public void setNacimiento(String nacimiento) {
 		this.nacimiento = nacimiento;
 	}
 	public String getDni() {

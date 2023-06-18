@@ -3,6 +3,7 @@ package com.parke.parke.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,30 +24,31 @@ public class JuegoController {
     @Autowired
     private IJuegoService juegoServ;
     
+    @CrossOrigin(origins = "*") 
     @GetMapping ("/juegos/traer")
     public List<Juego> getJuego() {
         
         return juegoServ.getJuego();
     }
-    
+    @CrossOrigin(origins = "*") 
     @PostMapping ("/juegos/crear")
     public String saveJuego (@RequestBody Juego juego) {
     	juegoServ.saveJuego(juego);
         
         return "el juego fue creada correctamente";
     }
-    
+    @CrossOrigin(origins = "*") 
     @DeleteMapping ("/juegos/borrar/{id}")
     public String deleteJuego(@PathVariable int id) {
     	juegoServ.deleteJuego(id);
         return "los juegos fue eliminada correctamente";
     }
-    
+    @CrossOrigin(origins = "*") 
     @PutMapping ("/juegos/editar/{id_original}")
     public Juego editJuego (@PathVariable int id_original,
             @RequestParam(required = false, name = "id") int nuevaId,
             @RequestParam(required = false, name = "nombre") String nuevoNombre,
-            @RequestParam(required = false, name = "personas") int nuevaCantidad,
+            @RequestParam(required = false, name = "cantidadDePersonas") int nuevaCantidad,
             @RequestParam(required = false, name = "precio") int nuevoPrecio) {
             
     	juegoServ.editJuego(id_original, nuevaId, nuevoNombre, nuevaCantidad, nuevoPrecio);
@@ -56,7 +58,7 @@ public class JuegoController {
         return juego;
 
     }
-    
+    @CrossOrigin(origins = "*") 
     @PutMapping ("/juegos/editar")
     public Juego editJuego(@RequestBody Juego juego) {
     	juegoServ.editJuego(juego);

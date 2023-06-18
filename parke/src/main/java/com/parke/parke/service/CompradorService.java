@@ -55,7 +55,7 @@ public class CompradorService implements ICompradorService {
     	comprador.setId(idNueva);
     	comprador.setNombre(nuevoNombre);
     	comprador.setApellido(nnuevoApellido);
-    	comprador.setFechaNac(nuevoFechNac);
+    	comprador.setNacimiento(nuevoFechNac);
     	comprador.setDni(nnuevoDni);
     	comprador.setTelefono(nuevoTelefono);
     	comprador.setEmail(nnuevoEmail);
