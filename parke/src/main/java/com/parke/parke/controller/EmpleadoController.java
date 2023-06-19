@@ -59,13 +59,13 @@ public class EmpleadoController {
 	            @RequestParam(required = false, name = "direccion") String nuevaDireccion,
 	            @RequestParam(required = false, name = "mail") String nuevoEmail,
 	            @RequestParam(required = false, name = "estadoCivil") String nuevoEstadoCivil,
-	            @RequestParam(required = false, name = "telefono") String nuevoTelefono,
-	            @RequestParam(required = false, name = "juego") String nuevoJuego
+	            @RequestParam(required = false, name = "telefono") String nuevoTelefono
+	            
 	            ) {
 	            
 	    	EmpleadoService empleadoService = new EmpleadoService();
 			empleadoService.editEmpleado(id_original, nuevaId, nuevoNombre, nuevoApellido, nuevoDni, nuevoFechNac, nuevaDireccion, nuevoEmail,
-					nuevoEstadoCivil, nuevoTelefono,nuevoJuego);
+					nuevoEstadoCivil, nuevoTelefono);
 	        
 	        Empleado empleado = empleadoServ.findEmpleado(nuevaId);
 	        

@@ -16,6 +16,7 @@ public class Juego {
 	private String nombre;
 	private int cantidadDePersonas;
 	private int precio;
+	private String empleado;
 	
 	
 	public Juego() {
@@ -61,6 +62,18 @@ public class Juego {
 	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
+
+
+	public String getEmpleado() {
+		return empleado;
+	}
+
+
+	public void setEmpleado(String empleado) {
+		this.empleado = empleado;
+	}
+	
+	
 	
 	
 }

@@ -30,8 +30,8 @@ public interface IEmpleadoService {
                             String nuevaDireccion,
                             String nnuevoEmail,
                             String nuevoEstadoCivil,
-                            String nuevoTelefono,
-                            String nuevoJuego
+                            String nuevoTelefono
+                            
                             
                             );
 

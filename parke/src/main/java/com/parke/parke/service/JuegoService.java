@@ -49,7 +49,7 @@ public class JuegoService implements IJuegoService {
 
 	@Override
 	public void editJuego(int idOriginal, int idNueva, String nuevoNombre, int nuevaCantidad,
-			int nuevoPrecio) {
+			int nuevoPrecio, String nuevoEmpleado) {
 
 		//busco  el objeto original
     	Juego juego = this.findJuego(idOriginal);
@@ -59,6 +59,7 @@ public class JuegoService implements IJuegoService {
     	juego.setNombre(nuevoNombre);
     	juego.setCantidadDePersonas(nuevaCantidad);
     	juego.setPrecio(nuevoPrecio);
+    	juego.setEmpleado(nuevoEmpleado);
     	
             
             

@@ -49,9 +49,10 @@ public class JuegoController {
             @RequestParam(required = false, name = "id") int nuevaId,
             @RequestParam(required = false, name = "nombre") String nuevoNombre,
             @RequestParam(required = false, name = "cantidadDePersonas") int nuevaCantidad,
-            @RequestParam(required = false, name = "precio") int nuevoPrecio) {
+            @RequestParam(required = false, name = "precio") int nuevoPrecio,
+            @RequestParam(required = false, name = "empleado") String nuevoEmpleado) {
             
-    	juegoServ.editJuego(id_original, nuevaId, nuevoNombre, nuevaCantidad, nuevoPrecio);
+    	juegoServ.editJuego(id_original, nuevaId, nuevoNombre, nuevaCantidad, nuevoPrecio, nuevoEmpleado);
         
         Juego juego = juegoServ.findJuego(nuevaId);
         

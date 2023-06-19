@@ -45,7 +45,7 @@ public class EmpleadoService implements IEmpleadoService {
 
 	@Override
 	public void editEmpleado(int idOriginal, int idNueva,String nuevoNombre,String nuevoApellido,String nuevoDni,String nuevoFechNac, 
-			String nuevaDireccion,String nuevoEmail,String nuevoEstadoCivil,String nuevoTelefono,String nuevoJuego) {
+			String nuevaDireccion,String nuevoEmail,String nuevoEstadoCivil,String nuevoTelefono) {
 
 		//busco  el objeto original
     	Empleado empleado = this.findEmpleado(idOriginal);
@@ -60,7 +60,7 @@ public class EmpleadoService implements IEmpleadoService {
     	empleado.setMail(nuevoEmail);
     	empleado.setEstadoCivil(nuevoEstadoCivil);
     	empleado.setTelefono(nuevoTelefono);
-    	empleado.setTelefono(nuevoJuego);
+    
     	
             
             

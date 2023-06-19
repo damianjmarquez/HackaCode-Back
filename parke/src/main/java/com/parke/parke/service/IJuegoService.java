@@ -24,7 +24,8 @@ public interface IJuegoService {
     public void editJuego(int idOriginal, int idNueva,
                             String nuevoNombre,
                             int nuevaCantidadDePersonas,
-                            int nuevoPrecio
+                            int nuevoPrecio,
+                            String nuevoEmpleado
                             );
 
 	void editJuego(Juego juego);

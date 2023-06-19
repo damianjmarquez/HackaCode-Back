@@ -21,7 +21,7 @@ public class Empleado {
     private String mail;
     private String estadoCivil;
     private String telefono;
-    private String juego;
+    
     
 	public Empleado() {
 		super();
@@ -99,13 +99,7 @@ public class Empleado {
 		this.telefono = telefono;
 	}
 
-	public String getJuego() {
-		return juego;
-	}
-
-	public void setJuego(String juego) {
-		this.juego = juego;
-	}
+	
 	
 	
 	
