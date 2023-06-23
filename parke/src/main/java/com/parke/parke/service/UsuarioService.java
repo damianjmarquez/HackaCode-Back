@@ -42,7 +42,7 @@ public class UsuarioService implements IUsuarioService{
     }
 
     @Override
-    public void editPersona(Long idOriginal, Long idNueva, String nuevoUsuario, String nuevocontraseña) {
+    public void editPersona(Long idOriginal, Long idNueva, String nuevoUsuario, String nuevocontraseña, String nuevotipoUsuario) {
             //busco  el objeto original
     	Usuario perso = this.findPersona(idOriginal);
             
@@ -50,6 +50,7 @@ public class UsuarioService implements IUsuarioService{
             perso.setId(idNueva);
             perso.setUsuario(nuevoUsuario);
             perso.setContraseña(nuevocontraseña);
+            perso.setTipo(nuevotipoUsuario);
             
             
             //guardar los cambios

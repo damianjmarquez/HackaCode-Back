@@ -17,6 +17,8 @@ public class Usuario {
     private Long id;
     private String usuario;
     private String contraseña;
+    private String tipo;
+    
 	public Long getId() {
 		return id;
 	}
@@ -35,9 +37,18 @@ public class Usuario {
 	public void setContraseña(String contraseña) {
 		this.contraseña = contraseña;
 	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
+	
    
     
-    //tabla una en una 
+
+ 
     
     
     
