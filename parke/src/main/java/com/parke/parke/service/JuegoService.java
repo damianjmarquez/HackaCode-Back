@@ -1,6 +1,7 @@
 package com.parke.parke.service;
 
 
+import java.time.LocalTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +50,8 @@ public class JuegoService implements IJuegoService {
 
 	@Override
 	public void editJuego(int idOriginal, int idNueva, String nuevoNombre, int nuevaCantidad,
-			int nuevoPrecio, String nuevoEmpleado) {
+			int nuevoPrecio, String nuevoEmpleado, LocalTime nuevoHoraInicio,
+            LocalTime nuevoHoraFin) {
 
 		//busco  el objeto original
     	Juego juego = this.findJuego(idOriginal);
@@ -60,7 +62,8 @@ public class JuegoService implements IJuegoService {
     	juego.setCantidadDePersonas(nuevaCantidad);
     	juego.setPrecio(nuevoPrecio);
     	juego.setEmpleado(nuevoEmpleado);
-    	
+    	juego.setHoraInicio(nuevoHoraInicio);
+    	juego.setHoraFin(nuevoHoraFin);
             
             
             //guardar los cambios

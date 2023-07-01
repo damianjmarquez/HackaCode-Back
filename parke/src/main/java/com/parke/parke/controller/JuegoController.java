@@ -1,6 +1,7 @@
 package com.parke.parke.controller;
 
 
+import java.time.LocalTime;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -50,9 +51,11 @@ public class JuegoController {
             @RequestParam(required = false, name = "nombre") String nuevoNombre,
             @RequestParam(required = false, name = "cantidadDePersonas") int nuevaCantidad,
             @RequestParam(required = false, name = "precio") int nuevoPrecio,
-            @RequestParam(required = false, name = "empleado") String nuevoEmpleado) {
+            @RequestParam(required = false, name = "empleado") String nuevoEmpleado,
+            @RequestParam(required = false, name = "horaInicio") LocalTime nuevoHoraInicio,
+            @RequestParam(required = false, name = "horaFin") LocalTime nuevoHoraFin) {
             
-    	juegoServ.editJuego(id_original, nuevaId, nuevoNombre, nuevaCantidad, nuevoPrecio, nuevoEmpleado);
+    	juegoServ.editJuego(id_original, nuevaId, nuevoNombre, nuevaCantidad, nuevoPrecio, nuevoEmpleado, nuevoHoraInicio, nuevoHoraFin);
         
         Juego juego = juegoServ.findJuego(nuevaId);
         

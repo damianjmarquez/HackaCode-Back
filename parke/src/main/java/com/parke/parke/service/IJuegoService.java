@@ -1,6 +1,7 @@
 package com.parke.parke.service;
 
 
+import java.time.LocalTime;
 import java.util.List;
 
 import com.parke.parke.model.Juego;
@@ -25,7 +26,9 @@ public interface IJuegoService {
                             String nuevoNombre,
                             int nuevaCantidadDePersonas,
                             int nuevoPrecio,
-                            String nuevoEmpleado
+                            String nuevoEmpleado,
+                            LocalTime nuevoHoraInicio,
+                            LocalTime nuevoHoraFin
                             );
 
 	void editJuego(Juego juego);

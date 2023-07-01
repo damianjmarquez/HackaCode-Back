@@ -24,7 +24,8 @@ public interface IUsuarioService {
     public void editPersona(Long idOriginal, Long idNueva,
                             String nuevoUsuario,
                             String nnuevoContraseña,
-                            String nuevotipoUsuario);
+                            String nuevotipoUsuario
+                            );
 
 	void editPersona(Usuario per);
     

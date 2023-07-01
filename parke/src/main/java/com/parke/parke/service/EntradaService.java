@@ -1,5 +1,8 @@
 package com.parke.parke.service;
 
+
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,8 @@ public class EntradaService implements IEntradaService {
 		List<Entrada> listaEntrada = entradaRepo.findAll();
         return listaEntrada;
 	}
+	
+	
 
 	@Override
 	public void saveEntrada(Entrada entrada) {
@@ -45,7 +50,7 @@ public class EntradaService implements IEntradaService {
 	
 
 	@Override
-	public void editEntrada(int idOriginal, int idNueva, String nuevoDni, String nuevojuego, String nuevafecha, Long nuevoprecio) {
+	public void editEntrada(int idOriginal, int idNueva, String nuevoDni, String nuevojuego, Date nuevafecha, Long nuevoprecio, LocalTime nuevaHora) {
 
 		//busco  el objeto original
     	Entrada entrada = this.findEntrada(idOriginal);
@@ -56,6 +61,7 @@ public class EntradaService implements IEntradaService {
     	entrada.setJuego(nuevojuego);
     	entrada.setFecha(nuevafecha);
     	entrada.setPrecio(nuevoprecio);
+    	entrada.setHora(nuevaHora);
     	
             
             

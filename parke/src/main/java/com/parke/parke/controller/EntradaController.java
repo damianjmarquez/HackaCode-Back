@@ -1,7 +1,11 @@
 package com.parke.parke.controller;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,12 +54,13 @@ public class EntradaController {
 	            @RequestParam(required = false, name = "id") int nuevaId,
 	            @RequestParam(required = false, name = "dni") String nuevoDni,
 	            @RequestParam(required = false, name = "juego") String nuevoJuego,
-	            @RequestParam(required = false, name = "fecha") String nuevaFecha,
-	            @RequestParam(required = false, name = "precio") Long nuevoPrecio
+	            @RequestParam(required = false, name = "fecha")  Date nuevaFecha,
+	            @RequestParam(required = false, name = "precio") Long nuevoPrecio,
+	            @RequestParam(required = false, name = "hora") LocalTime nuevaHora
 	            ) {
 	            
 	    	entradaServ.editEntrada(id_original, nuevaId, nuevoDni, nuevoJuego,
-	    								nuevaFecha, nuevoPrecio);
+	    								nuevaFecha, nuevoPrecio, nuevaHora);
 	        
 	        Entrada entrada = entradaServ.findEntrada(nuevaId);
 	        
