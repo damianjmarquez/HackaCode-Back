@@ -35,3 +35,9 @@ build/
 
 ### IntelliJ ###
 .idea/
+
+
+### enviroment files ###
+.env
+.env.dev
+.env.prod
