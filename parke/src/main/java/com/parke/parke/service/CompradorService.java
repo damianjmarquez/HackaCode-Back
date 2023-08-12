@@ -23,15 +23,14 @@ public class CompradorService implements ICompradorService {
 	}
 
 	@Override
-	public void saveComprador(Comprador comprador) {
-		compradorRepo.save(comprador);
-		
-	}
+	public boolean saveComprador(Comprador comprador) {
+		Comprador result = compradorRepo.save(comprador);
+        return result.getId() != null;
+    }
 
 	@Override
 	public void deleteComprador(int id) {
 		compradorRepo.deleteById(id);
-		
 	}
 
 	@Override

@@ -7,20 +7,12 @@ import com.parke.parke.model.Comprador;
 
 public interface ICompradorService {
 
-	//método para traer a todas las personas
-    //lectura
     List<Comprador> getComprador();
- 
-    //alta
-    void saveComprador(Comprador comprador);
 
-    //baja
+    boolean saveComprador(Comprador comprador);
     void deleteComprador(int id);
 
-    //lectura de un solo objeto
     Comprador findComprador(int id);
-
-    //edición/modificación
     void editComprador(int idOriginal, int idNueva,
                             String nuevoNombre,
                             String nnuevoApellido,

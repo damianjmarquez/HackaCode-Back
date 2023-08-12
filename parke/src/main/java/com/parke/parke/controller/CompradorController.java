@@ -1,7 +1,10 @@
 package com.parke.parke.controller;
 
 import java.util.List;
+
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.parke.parke.service.ICompradorService;
 import com.parke.parke.model.Comprador;
@@ -16,14 +19,17 @@ public class CompradorController {
 	 
 	 
 	    @GetMapping ()
-	    public List<Comprador> getComprador() {
-	        return CompradorServ.getComprador();
+	    public ResponseEntity<List<Comprador>> getComprador() {
+			final List<Comprador> compradores = CompradorServ.getComprador();
+	        return ResponseEntity.ok().body(compradores);
 	    }
 
 		@PostMapping ()
-	    public String saveComprador (@RequestBody Comprador comprador) {
-	    	CompradorServ.saveComprador(comprador);
-	        return "El comprador fue creada correctamente";
+	    public ResponseEntity<Boolean> saveComprador (@RequestBody Comprador comprador) {
+	    	final boolean result = CompradorServ.saveComprador(comprador);
+	        if (result) return ResponseEntity.ok().build();
+			else return ResponseEntity.internalServerError().build();
+
 	    }
 
 	    @DeleteMapping ("/{id}")
