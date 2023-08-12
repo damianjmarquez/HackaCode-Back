@@ -11,19 +11,19 @@ public class Comprador {
 	
 	@Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-	private int id;
+	private Integer id;
 	private String nombre;
 	private String apellido;
 	private String nacimiento;
 	private String dni;
 	private String telefono;
 	private String email;
-	
-	
-	public int getId() {
+
+
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getNombre() {
