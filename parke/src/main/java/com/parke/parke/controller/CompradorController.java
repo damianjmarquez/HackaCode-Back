@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.parke.parke.service.ICompradorService;
 import com.parke.parke.model.Comprador;
 
-
+@CrossOrigin(origins = "*")
 @RestController
 public class CompradorController {
 
@@ -22,20 +22,17 @@ public class CompradorController {
 	    private ICompradorService CompradorServ;
 	 
 	 
-	    @CrossOrigin(origins = "*")
 	    @GetMapping ("/compradores/traer")
 	    public List<Comprador> getComprador() {
 	        
 	        return CompradorServ.getComprador();
 	    }
-	    @CrossOrigin(origins = "*") 
 	    @PostMapping ("/Compradores/crear")
 	    public String saveComprador (@RequestBody Comprador comprador) {
 	    	CompradorServ.saveComprador(comprador);
 	        
 	        return "El comprador fue creada correctamente";
 	    }
-	    @CrossOrigin(origins = "*") 
 	    @DeleteMapping ("/compradores/borrar/{id}")
 	    public String deletePersona(@PathVariable int id) {
 	    	CompradorServ.deleteComprador(id);
@@ -44,7 +41,6 @@ public class CompradorController {
 	    
 	    
 	    
-	    @CrossOrigin(origins = "*") 
 	    @PutMapping ("/compradores/editar/{id_original}")
 	    public Comprador editComprador (@PathVariable int id_original,
 	            @RequestParam(required = false, name = "id") int nuevaId,
@@ -66,7 +62,6 @@ public class CompradorController {
 	    }
 	    
 	   
-	    @CrossOrigin(origins = "*") 
 	    @PutMapping ("/Compradores/editar")
 	    public Comprador editComprador(@RequestBody Comprador comprador) {
 	    	CompradorServ.editComprador(comprador);

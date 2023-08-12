@@ -18,37 +18,36 @@ import com.parke.parke.service.IEmpleadoService;
 
 
 
+@CrossOrigin(origins = "*")
 @RestController
 public class EmpleadoController {
 
 	 @Autowired
 	    private IEmpleadoService empleadoServ;
-	 
-	 
-	 
-	    @CrossOrigin(origins = "*") 
+
+
+
 	    @GetMapping ("/empleados/traer")
 	    public List<Empleado> getEmpleado() {
-	        
+
 	        return empleadoServ.getEmpleado();
 	    }
-	    @CrossOrigin(origins = "*")
+
 	    @PostMapping ("/empleados/crear")
 	    public String saveComprador (@RequestBody Empleado empleado) {
 	    	empleadoServ.saveEmpleado(empleado);
-	        
+
 	        return "El empleado fue creada correctamente";
 	    }
-	    @CrossOrigin(origins = "*")
+
 	    @DeleteMapping ("/empleados/borrar/{id}")
 	    public String deleteEmpleado(@PathVariable int id) {
 	    	empleadoServ.deleteEmpleado(id);
 	        return "El empleado fue eliminado correctamente";
 	    }
-	    
-	    
-	    
-	    @CrossOrigin(origins = "*")
+
+
+
 	    @PutMapping ("/empleados/editar/{id_original}")
 	    public Empleado editEmpleado (@PathVariable int id_original,
 	            @RequestParam(required = false, name = "id") int nuevaId,
@@ -60,25 +59,24 @@ public class EmpleadoController {
 	            @RequestParam(required = false, name = "mail") String nuevoEmail,
 	            @RequestParam(required = false, name = "estadoCivil") String nuevoEstadoCivil,
 	            @RequestParam(required = false, name = "telefono") String nuevoTelefono
-	            
+
 	            ) {
-	            
+
 	    	EmpleadoService empleadoService = new EmpleadoService();
 			empleadoService.editEmpleado(id_original, nuevaId, nuevoNombre, nuevoApellido, nuevoDni, nuevoFechNac, nuevaDireccion, nuevoEmail,
 					nuevoEstadoCivil, nuevoTelefono);
-	        
+
 	        Empleado empleado = empleadoServ.findEmpleado(nuevaId);
-	        
+
 	        return empleado;
 
 	    }
-	    
-	   
-	    @CrossOrigin(origins = "*")
+
+
 	    @PutMapping ("/empleados/editar")
 	    public Empleado editEmpleado(@RequestBody Empleado empleado) {
 	    	empleadoServ.editEmpleado(empleado);
-	    	
+
 	    	return empleadoServ.findEmpleado(empleado.getId());
 	    }
 }
