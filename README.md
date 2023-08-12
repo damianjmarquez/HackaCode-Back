@@ -19,3 +19,10 @@ y luegoi reemplazar el valor de las variables de entorno por su respectivo valor
 ```bash
   docker-compose up -d
 ```
+
+
+## Swagger 
+Para poder visualizar los endpoint de la api se debe ingresar a la siguiente ruta
+```bash
+  http://localhost:8080/swagger-ui/index.html
+```
