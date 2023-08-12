@@ -9,19 +9,19 @@ public interface ICompradorService {
 
 	//método para traer a todas las personas
     //lectura
-    public List<Comprador> getComprador();
+    List<Comprador> getComprador();
  
     //alta
-    public void saveComprador(Comprador comprador);
+    void saveComprador(Comprador comprador);
 
     //baja
-    public void deleteComprador(int id);
+    void deleteComprador(int id);
 
     //lectura de un solo objeto
-    public Comprador findComprador(int id);
+    Comprador findComprador(int id);
 
     //edición/modificación
-    public void editComprador(int idOriginal, int idNueva,
+    void editComprador(int idOriginal, int idNueva,
                             String nuevoNombre,
                             String nnuevoApellido,
                             String nuevoFechNac,
